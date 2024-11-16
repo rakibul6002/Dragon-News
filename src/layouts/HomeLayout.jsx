@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
 import LatestNews from "../components/LatestNews";
 import NavBar from "../components/NavBar";
@@ -18,11 +19,11 @@ export default function HomeLayout() {
               <NavBar></NavBar>
             </section>
         </nav>
-        <main className="w-11/12 mx-auto pt-5 md:grid grid-cols-12">
+        <main className="w-11/12 mx-auto pt-5 md:grid grid-cols-12 gap-5">
             <aside className="left col-span-3">
               <LeftNavbar/>
             </aside>
-            <section className="col-span-6">Main content</section>
+            <section className="col-span-6"><Outlet/></section>
             <aside className=" col-span-3">
               <RightNavbar/>
             </aside>
