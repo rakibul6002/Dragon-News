@@ -1,4 +1,5 @@
 import { FaRegEye, FaShareAlt, FaStar, FaRegStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const NewsCard = (props = {}) => {
   const { news } = props || {};
@@ -48,7 +49,7 @@ const NewsCard = (props = {}) => {
 
       {/* Thumbnail */}
       <img
-        className="w-full h-48 object-cover"
+        className="w-full h-60 object-cover"
         src={news.thumbnail_url}
         alt="Thumbnail"
       />
@@ -57,10 +58,10 @@ const NewsCard = (props = {}) => {
       <div className="px-4 py-3 text-gray-700">
         <p>
           {news.details.substring(0, 100)}...
-          <span className="text-blue-500 font-medium cursor-pointer">
+          <Link to={`/news/${news._id}`} className="text-blue-500 font-medium cursor-pointer">
             {" "}
             Read More
-          </span>
+          </Link>
         </p>
       </div>
 
